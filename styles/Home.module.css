@@ -22,6 +22,11 @@
   justify-content: center;
   align-items: center;
 }
+.footerLinks {
+  display: flex;
+  color: #666;
+  gap: 1rem;
+}
 
 .small {
   font-size: 0.8rem;

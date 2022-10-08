@@ -130,9 +130,14 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a href="https://twitter.com/0xHyperbart" rel="noopener noreferrer">
-          Twitter: 0xHyperbart
-        </a>
+        <div className={styles.footerLinks}>
+          <a href="https://twitter.com/0xHyperbart" rel="noopener noreferrer">
+            Twitter
+          </a> | 
+          <a href="https://github.com/0xHyperbart/celsiustransactions" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
         <div class={styles.small}>
           More features coming soon &mdash; watch this space.
         </div>
