@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -23,9 +23,10 @@ export default function Home() {
         if (data.success) {
           console.log("data", data);
           setTransactions(data.transactions);
-        }
-        else {
-          alert("Oopsie daisy, the API isn't working right now. Try again later.");
+        } else {
+          alert(
+            "Oopsie daisy, the API isn't working right now. Try again later."
+          );
         }
       });
   }
@@ -64,8 +65,30 @@ export default function Home() {
           <button className={styles.searchButton}>Search</button>
         </form>
 
-        <pre>{JSON.stringify(transactions, null, 2)}</pre>
-
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transactions.map((transaction, i) => (
+              <tr key={i} className={styles.transaction}>
+                <td className={styles.username}>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: transaction.username }}
+                  />
+                </td>
+                <td className={styles.address}>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: transaction.address }}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </main>
 
       <footer className={styles.footer}>

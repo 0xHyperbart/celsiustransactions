@@ -8,7 +8,10 @@ db.serialize(() => {
 export default function handler(req, res) {
   const { query } = req.body;
   db.all(
-    `SELECT * FROM transactions_search where username_address match ?;`,
+    `SELECT 
+      highlight(transactions_search,0, '<b>', '</b>') address,
+      highlight(transactions_search,1, '<b>', '</b>') username
+    FROM transactions_search where transactions_search match ?;`,
     query,
     (err, transactions) => {
       console.log("err", err);
