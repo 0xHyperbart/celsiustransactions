@@ -12,7 +12,7 @@ export default function handler(req, res) {
   if (!query) {
     res.json({
       success: true,
-      txs: [],
+      txs: null,
       totalCount: 0,
       showingCount: 0
     });

@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [txs, setTxs] = useState([]);
+  const [txs, setTxs] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
   const [showingCount, setShowingCount] = useState(0);
   function submit(e) {
@@ -75,52 +75,58 @@ export default function Home() {
           </button>
         </form>
 
-        <table>
-          <thead>
-            <tr>
-              <th>USERNAME</th>
-              <th>ADDRESS</th>
-              <th>DATE</th>
-              <th>ACCOUNT</th>
-              <th>TYPE</th>
-              <th>Descriptive Purpose</th>
-              <th>COIN</th>
-              <th>COIN QUANTITY</th>
-              <th>COIN USD</th>
-            </tr>
-          </thead>
-          <tbody>
-            {txs.map((tx, i) => (
-              <tr key={i} className={styles.transaction}>
-                <td dangerouslySetInnerHTML={{ __html: tx[0] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[1] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[2] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[3] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[4] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[5] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[6] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[7] }}></td>
-                <td dangerouslySetInnerHTML={{ __html: tx[8] }}></td>
+        {txs !== null ? (
+          <table>
+            <thead>
+              <tr>
+                <th>USERNAME</th>
+                <th>ADDRESS</th>
+                <th>DATE</th>
+                <th>ACCOUNT</th>
+                <th>TYPE</th>
+                <th>Descriptive Purpose</th>
+                <th>COIN</th>
+                <th>COIN QUANTITY</th>
+                <th>COIN USD</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {txs.map((tx, i) => (
+                <tr key={i} className={styles.transaction}>
+                  <td dangerouslySetInnerHTML={{ __html: tx[0] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[1] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[2] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[3] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[4] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[5] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[6] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[7] }}></td>
+                  <td dangerouslySetInnerHTML={{ __html: tx[8] }}></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : null}
 
-        <p>
-          Showing {showingCount} out of {totalCount}
-        </p>
-        {totalCount > showingCount && (
-          <p>
-            No pagination yet, to see more results try{" "}
-            <a
-              href="https://github.com/0xHyperbart/celsiustransactions"
-              rel="noopener noreferrer"
-            >
-              grepping locally
-            </a>{" "}
-            (instructions WIP)
-          </p>
-        )}
+        {txs !== null ? (
+          <>
+            <p>
+              Showing {showingCount} out of {totalCount}
+            </p>
+            {totalCount > showingCount && (
+              <p>
+                No pagination yet, to see more results try{" "}
+                <a
+                  href="https://github.com/0xHyperbart/celsiustransactions"
+                  rel="noopener noreferrer"
+                >
+                  grepping locally
+                </a>{" "}
+                (instructions WIP)
+              </p>
+            )}
+          </>
+        ) : null}
       </main>
 
       <footer className={styles.footer}>
