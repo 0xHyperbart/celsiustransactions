@@ -5,11 +5,13 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
   const [txs, setTxs] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [showingCount, setShowingCount] = useState(0);
   function submit(e) {
     e.preventDefault();
+    setLoading(true);
 
     fetch("/api/hello", {
       method: "POST",
@@ -29,8 +31,10 @@ export default function Home() {
         setTxs(data.txs || []);
         setTotalCount(data.totalCount || 0);
         setShowingCount(data.showingCount || 0)
+        setLoading(false);
       })
       .catch((err) => {
+        setLoading(false);
         alert(`Oopsie daisy. ${err.message}.`);
       });
   }
@@ -66,7 +70,7 @@ export default function Home() {
             onChange={(e) => setQuery(e.target.value)}
             size={40}
           />
-          <button className={styles.searchButton}>Search</button>
+          <button className={styles.searchButton} disabled={loading}>{loading ? 'Searching' : 'Search'}</button>
         </form>
 
         <table>
