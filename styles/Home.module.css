@@ -4,7 +4,7 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,18 @@
 
 .footer {
   display: flex;
+  flex-direction: column;
   flex: 1;
+  gap: 1rem;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+}
+
+.small {
+  font-size: 0.8rem;
+  color: #666;
 }
 
 .footer a {
@@ -51,9 +58,19 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.description a {
+  color: #0070f3;
+}
+.description a:hover {
+  color: #0070f3;
+}
+.description a:active {
+  color: red;
 }
 
 .inputbox {
