@@ -6,6 +6,7 @@ import Link from "next/link";
 
 // TODO: pagination
 // TODO: shareable links
+// TODO: incorporate #fdb500
 export default function Home() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -55,7 +56,13 @@ export default function Home() {
       <Head>
         <title>Search Celsius Transactions</title>
         <meta name="description" content="Easily look up transactions from Celsius bankruptcy proceedings." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616"/>
+        <meta name="msapplication-TileColor" content="#fdb500"/>
+        <meta name="theme-color" content="#fdb500"/>
       </Head>
 
       <main className={styles.main}>
