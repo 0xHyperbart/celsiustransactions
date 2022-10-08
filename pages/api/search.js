@@ -42,12 +42,6 @@ export default function handler(req, res) {
     MATCH ?;`,
     query,
     (err, transactions) => {
-      let totalCount = transactions.length;
-      let showingCount = transactions.length
-      if (transactions.length > SHOWING_LIMIT) {
-        transactions = transactions.slice(0, SHOWING_LIMIT);
-        showingCount = SHOWING_LIMIT;
-      }
       if (err) {
         res.json({
           success: false,
@@ -55,6 +49,12 @@ export default function handler(req, res) {
           version: 'v1'
         });
         return;
+      }
+      let totalCount = transactions.length;
+      let showingCount = transactions.length
+      if (transactions.length > SHOWING_LIMIT) {
+        transactions = transactions.slice(0, SHOWING_LIMIT);
+        showingCount = SHOWING_LIMIT;
       }
       const txs = transactions.map((tx) => Object.values(tx))
       const response = { success: true, txs, totalCount, showingCount, version: 'v1' }
