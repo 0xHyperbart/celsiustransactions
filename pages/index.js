@@ -6,6 +6,8 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   const [query, setQuery] = useState("");
   const [txs, setTxs] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
+  const [showingCount, setShowingCount] = useState(0);
   function submit(e) {
     e.preventDefault();
 
@@ -25,6 +27,8 @@ export default function Home() {
         }
         console.log("data", data);
         setTxs(data.txs || []);
+        setTotalCount(data.totalCount || 0);
+        setShowingCount(data.showingCount || 0)
       })
       .catch((err) => {
         alert(`Oopsie daisy. ${err.message}.`);
@@ -95,6 +99,9 @@ export default function Home() {
             ))}
           </tbody>
         </table>
+
+        <p>Showing {showingCount} out of {totalCount}</p>
+        {totalCount > showingCount && <p>No pagination yet, to see more results try <a href="https://github.com/0xHyperbart/celsiustransactions" rel="noopener noreferrer">grepping locally</a> (instructions WIP)</p>}
       </main>
 
       <footer className={styles.footer}>

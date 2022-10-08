@@ -5,15 +5,25 @@ db.serialize(() => {
   console.log("ready");
 });
 
+const SHOWING_LIMIT = 2000;
+
 export default function handler(req, res) {
   const { query } = req.body;
+  if (!query) {
+    res.json({
+      success: true,
+      txs: [],
+      totalCount: 0,
+      showingCount: 0
+    });
+  }
   if (query.length < 3) {
     // TODO: check if output is too large
-    // res.json({
-    //   success: false,
-    //   error: "Query must be at least 3 characters",
-    // });
-    // return;
+    res.json({
+      success: false,
+      error: "Query must be at least 3 characters",
+    });
+    return;
   }
   db.all(
     `SELECT 
@@ -31,10 +41,11 @@ export default function handler(req, res) {
     MATCH ?;`,
     query,
     (err, transactions) => {
-      let is_cut_off = false;
-      if (transactions.length > 2000) {
-        transactions = transactions.slice(0, 2000);
-        is_cut_off = true;
+      let totalCount = transactions.length;
+      let showingCount = transactions.length
+      if (transactions.length > SHOWING_LIMIT) {
+        transactions = transactions.slice(0, SHOWING_LIMIT);
+        showingCount = SHOWING_LIMIT;
       }
       if (err) {
         res.json({
@@ -46,7 +57,7 @@ export default function handler(req, res) {
       console.log("err", err);
       console.log("transactions", transactions);
       const txs = transactions.map((tx) => Object.values(tx))
-      const response = { success: true, txs, is_cut_off }
+      const response = { success: true, txs, totalCount, showingCount }
       console.log(JSON.stringify(response).length)
       res.status(200).json(response);
     }
