@@ -16,8 +16,8 @@ export default function handler(req, res) {
   }
   db.all(
     `SELECT 
-      highlight(transactions_search,0, '<b>', '</b>') address,
-      highlight(transactions_search,1, '<b>', '</b>') username
+      highlight(transactions_search,1, '<b>', '</b>') username,
+      highlight(transactions_search,2, '<b>', '</b>') address
     FROM transactions_search where transactions_search match ?;`,
     query,
     (err, transactions) => {
