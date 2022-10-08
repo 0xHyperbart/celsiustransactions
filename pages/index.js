@@ -84,7 +84,6 @@ export default function Home() {
             placeholder="Username or address"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            size={40}
           />
           <button className={styles.searchButton} disabled={loading}>
             {loading ? "Searching" : "Search"}
