@@ -14,13 +14,15 @@ export default function handler(req, res) {
       success: true,
       txs: null,
       totalCount: 0,
-      showingCount: 0
+      showingCount: 0,
+      version: 'v1'
     });
   }
   if (query.length < 3) {
     res.json({
       success: false,
       error: "Query must be at least 3 characters",
+      version: 'v1'
     });
     return;
   }
@@ -50,6 +52,7 @@ export default function handler(req, res) {
         res.json({
           success: false,
           error: err.message,
+          version: 'v1'
         });
         return;
       }

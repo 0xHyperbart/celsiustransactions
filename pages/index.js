@@ -31,7 +31,7 @@ export default function Home() {
           throw new Error('Please refresh the page');
         }
         console.log("data", data);
-        setTxs(data.txs || []);
+        setTxs(data.txs);
         setTotalCount(data.totalCount || 0);
         setShowingCount(data.showingCount || 0);
         setLoading(false);
