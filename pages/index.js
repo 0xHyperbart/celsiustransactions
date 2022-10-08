@@ -60,6 +60,38 @@ export default function Home() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616"/>
         <meta name="msapplication-TileColor" content="#fdb500"/>
         <meta name="theme-color" content="#fdb500"/>
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://celsiustransactions.com" />
+        <meta property="og:title" content="Search Celsius Transactions" />
+        <meta
+          property="og:description"
+          content="Easily look up transactions from Celsius bankruptcy proceedings."
+        />
+        <meta
+          property="og:image"
+          content="https://celsiustransactions.com/og.png"
+        />
+        <meta property="og:image:width" content="2400" />
+        <meta property="og:image:height" content="1200" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://celsiustransactions.com"
+        />
+        <meta
+          property="twitter:title"
+          content="Search Celsius Transactions"
+        />
+        <meta
+          property="twitter:description"
+          content="Easily look up transactions from Celsius bankruptcy proceedings."
+        />
+        <meta
+          property="twitter:image"
+          content="https://celsiustransactions.com/og.png"
+        />
       </Head>
 
       <main className={styles.main}>
