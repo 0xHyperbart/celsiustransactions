@@ -78,6 +78,22 @@ export default function Home() {
         <meta name="msapplication-TileColor" content="#fdb500" />
         <meta name="theme-color" content="#fdb500" />
 
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8F2M52TY44"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-8F2M52TY44');
+              `,
+          }}
+        ></script>
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celsiustransactions.com" />
         <meta property="og:title" content="Search Celsius Transactions" />
