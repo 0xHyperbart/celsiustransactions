@@ -13,7 +13,7 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
 
-    fetch("/api/hello", {
+    fetch("/api/search", {
       method: "POST",
       body: JSON.stringify({
         query,
