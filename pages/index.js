@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [transactions, setTransactions] = useState([]);
+  const [txs, setTxs] = useState([]);
   function submit(e) {
     e.preventDefault();
 
@@ -24,7 +24,7 @@ export default function Home() {
           throw new Error(data.error);
         }
         console.log("data", data);
-        setTransactions(data.transactions || []);
+        setTxs(data.txs || []);
       })
       .catch((err) => {
         alert(`Oopsie daisy. ${err.message}.`);
@@ -80,25 +80,17 @@ export default function Home() {
             </tr>
           </thead>
           <tbody>
-            {transactions.map((transaction, i) => (
+            {txs.map((tx, i) => (
               <tr key={i} className={styles.transaction}>
-                <td dangerouslySetInnerHTML={{ __html: transaction.username_joined }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.address }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.date }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.account }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.type }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.descriptive_purpose }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.coin }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.coin_quantity }}></td>
-                <td dangerouslySetInnerHTML={{ __html: transaction.coin_usd }}></td>
-
-
-
-
-
-
-
-
+                <td dangerouslySetInnerHTML={{ __html: tx[0] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[1] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[2] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[3] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[4] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[5] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[6] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[7] }}></td>
+                <td dangerouslySetInnerHTML={{ __html: tx[8] }}></td>
               </tr>
             ))}
           </tbody>

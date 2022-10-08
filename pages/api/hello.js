@@ -31,6 +31,11 @@ export default function handler(req, res) {
     MATCH ?;`,
     query,
     (err, transactions) => {
+      let is_cut_off = false;
+      if (transactions.length > 2000) {
+        transactions = transactions.slice(0, 2000);
+        is_cut_off = true;
+      }
       if (err) {
         res.json({
           success: false,
@@ -40,8 +45,10 @@ export default function handler(req, res) {
       }
       console.log("err", err);
       console.log("transactions", transactions);
-      // console.log(JSON.stringify(transactions).length)
-      res.status(200).json({ success: true, transactions });
+      const txs = transactions.map((tx) => Object.values(tx))
+      const response = { success: true, txs, is_cut_off }
+      console.log(JSON.stringify(response).length)
+      res.status(200).json(response);
     }
   );
 }
