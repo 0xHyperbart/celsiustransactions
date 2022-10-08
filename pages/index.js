@@ -69,7 +69,7 @@ export default function Home() {
         }}
       />
       <Head>
-        <title>Search Celsius Transactions</title>
+        <title>Celsius Transactions - Easily look up transactions from Celsius bankruptcy proceedings.</title>
         <meta
           name="description"
           content="Easily look up transactions from Celsius bankruptcy proceedings."
@@ -98,7 +98,7 @@ export default function Home() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celsiustransactions.com" />
-        <meta property="og:title" content="Search Celsius Transactions" />
+        <meta property="og:title" content="Celsius Transactions" />
         <meta
           property="og:description"
           content="Easily look up transactions from Celsius bankruptcy proceedings."
@@ -115,7 +115,7 @@ export default function Home() {
           property="twitter:url"
           content="https://celsiustransactions.com"
         />
-        <meta property="twitter:title" content="Search Celsius Transactions" />
+        <meta property="twitter:title" content="Celsius Transactions" />
         <meta
           property="twitter:description"
           content="Easily look up transactions from Celsius bankruptcy proceedings."
