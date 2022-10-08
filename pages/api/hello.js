@@ -53,11 +53,8 @@ export default function handler(req, res) {
         });
         return;
       }
-      console.log("err", err);
-      console.log("transactions", transactions);
       const txs = transactions.map((tx) => Object.values(tx))
       const response = { success: true, txs, totalCount, showingCount }
-      console.log(JSON.stringify(response).length)
       res.status(200).json(response);
     }
   );
