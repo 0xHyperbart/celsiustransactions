@@ -30,7 +30,7 @@ export default function Home() {
         console.log("data", data);
         setTxs(data.txs || []);
         setTotalCount(data.totalCount || 0);
-        setShowingCount(data.showingCount || 0)
+        setShowingCount(data.showingCount || 0);
         setLoading(false);
       })
       .catch((err) => {
@@ -70,7 +70,9 @@ export default function Home() {
             onChange={(e) => setQuery(e.target.value)}
             size={40}
           />
-          <button className={styles.searchButton} disabled={loading}>{loading ? 'Searching' : 'Search'}</button>
+          <button className={styles.searchButton} disabled={loading}>
+            {loading ? "Searching" : "Search"}
+          </button>
         </form>
 
         <table>
@@ -104,8 +106,21 @@ export default function Home() {
           </tbody>
         </table>
 
-        <p>Showing {showingCount} out of {totalCount}</p>
-        {totalCount > showingCount && <p>No pagination yet, to see more results try <a href="https://github.com/0xHyperbart/celsiustransactions" rel="noopener noreferrer">grepping locally</a> (instructions WIP)</p>}
+        <p>
+          Showing {showingCount} out of {totalCount}
+        </p>
+        {totalCount > showingCount && (
+          <p>
+            No pagination yet, to see more results try{" "}
+            <a
+              href="https://github.com/0xHyperbart/celsiustransactions"
+              rel="noopener noreferrer"
+            >
+              grepping locally
+            </a>{" "}
+            (instructions WIP)
+          </p>
+        )}
       </main>
 
       <footer className={styles.footer}>
