@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -9,6 +10,12 @@ export default function Home() {
   const [txs, setTxs] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
   const [showingCount, setShowingCount] = useState(0);
+  function clear() {
+    setQuery("");
+    setTxs(null);
+    setTotalCount(0);
+    setShowingCount(0);
+  }
   function submit(e) {
     e.preventDefault();
     setLoading(true);
@@ -50,7 +57,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Search Celsius Transactions</h1>
+        <h1 className={styles.title} onClick={clear}>Search Celsius Transactions</h1>
 
         <p className={styles.description}>
           Easily look up transactions from{" "}
