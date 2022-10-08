@@ -79,7 +79,7 @@ export default function Home() {
         </form>
 
         {txs !== null ? (
-          <table>
+          <table className={styles.transactions}>
             <thead>
               <tr>
                 <th>USERNAME</th>
@@ -112,7 +112,7 @@ export default function Home() {
         ) : null}
 
         {txs !== null ? (
-          <>
+          <div className={styles.gutter}>
             <p>
               Showing {showingCount} out of {totalCount}
             </p>
@@ -128,7 +128,7 @@ export default function Home() {
                 (instructions WIP)
               </p>
             )}
-          </>
+          </div>
         ) : null}
       </main>
 

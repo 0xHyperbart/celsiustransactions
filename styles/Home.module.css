@@ -1,5 +1,13 @@
 .container {
-  padding: 0 2rem;
+}
+
+.transactions {
+  border-collapse: collapse;
+}
+
+.transactions td, .transactions th {
+  border: 1px solid #ccc;
+  padding: 0 1rem;
 }
 
 .main {
@@ -9,6 +17,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.gutter {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
