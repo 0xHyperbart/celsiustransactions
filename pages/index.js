@@ -24,7 +24,7 @@ export default function Home() {
           throw new Error(data.error);
         }
         console.log("data", data);
-        setTransactions(data.transactions);
+        setTransactions(data.transactions || []);
       })
       .catch((err) => {
         alert(`Oopsie daisy. ${err.message}.`);
@@ -68,23 +68,37 @@ export default function Home() {
         <table>
           <thead>
             <tr>
-              <th>Username</th>
-              <th>Address</th>
+              <th>USERNAME</th>
+              <th>ADDRESS</th>
+              <th>DATE</th>
+              <th>ACCOUNT</th>
+              <th>TYPE</th>
+              <th>Descriptive Purpose</th>
+              <th>COIN</th>
+              <th>COIN QUANTITY</th>
+              <th>COIN USD</th>
             </tr>
           </thead>
           <tbody>
             {transactions.map((transaction, i) => (
               <tr key={i} className={styles.transaction}>
-                <td className={styles.username}>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: transaction.username }}
-                  />
-                </td>
-                <td className={styles.address}>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: transaction.address }}
-                  />
-                </td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.username_joined }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.address }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.date }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.account }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.type }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.descriptive_purpose }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.coin }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.coin_quantity }}></td>
+                <td dangerouslySetInnerHTML={{ __html: transaction.coin_usd }}></td>
+
+
+
+
+
+
+
+
               </tr>
             ))}
           </tbody>
