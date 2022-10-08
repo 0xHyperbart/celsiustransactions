@@ -142,7 +142,7 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.small}>
-          More features coming soon &mdash; watch this space.
+          Best experienced on Desktop. More features coming soon &mdash; watch this space.
         </div>
       </footer>
     </div>
