@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
+// TODO: pagination
+// TODO: shareable links
 export default function Home() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
