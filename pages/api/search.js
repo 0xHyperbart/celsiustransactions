@@ -15,14 +15,14 @@ export default function handler(req, res) {
       txs: null,
       totalCount: 0,
       showingCount: 0,
-      version: 'v1'
+      version: "v1",
     });
   }
   if (query.length < 3) {
     res.json({
       success: false,
       error: "Query must be at least 3 characters",
-      version: 'v1'
+      version: "v1",
     });
     return;
   }
@@ -46,18 +46,24 @@ export default function handler(req, res) {
         res.json({
           success: false,
           error: err.message,
-          version: 'v1'
+          version: "v1",
         });
         return;
       }
       let totalCount = transactions.length;
-      let showingCount = transactions.length
+      let showingCount = transactions.length;
       if (transactions.length > SHOWING_LIMIT) {
         transactions = transactions.slice(0, SHOWING_LIMIT);
         showingCount = SHOWING_LIMIT;
       }
-      const txs = transactions.map((tx) => Object.values(tx))
-      const response = { success: true, txs, totalCount, showingCount, version: 'v1' }
+      const txs = transactions.map((tx) => Object.values(tx));
+      const response = {
+        success: true,
+        txs,
+        totalCount,
+        showingCount,
+        version: "v1",
+      };
       res.status(200).json(response);
     }
   );
