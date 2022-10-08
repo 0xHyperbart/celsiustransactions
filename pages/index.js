@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Script from "next/script";
 
 // TODO: pagination
 // TODO: shareable links
@@ -50,6 +51,23 @@ export default function Home() {
   }
   return (
     <div className={styles.container}>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-8F2M52TY44"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-8F2M52TY44');
+            `,
+        }}
+      />
       <Head>
         <title>Search Celsius Transactions</title>
         <meta
@@ -77,22 +95,6 @@ export default function Home() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616" />
         <meta name="msapplication-TileColor" content="#fdb500" />
         <meta name="theme-color" content="#fdb500" />
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-8F2M52TY44"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-8F2M52TY44');
-              `,
-          }}
-        ></script>
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celsiustransactions.com" />
