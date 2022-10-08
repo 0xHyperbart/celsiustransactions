@@ -1,6 +1,9 @@
 # Search Celsius Transactions
 This is a [Next.js](https://nextjs.org/) project bootstrapped with create-next-app
 
+## Data
+Cleaned and indexable Celsium Coin Transaction data can be built using the [celsiustransactionsdata](https://github.com/0xHyperbart/celsiustransactionsdata) repo.
+
 ## Getting Started
 
 First, run the development server:
