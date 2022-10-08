@@ -34,8 +34,8 @@ export default function Home() {
         if (!data.success) {
           throw new Error(data.error);
         }
-        if (data.version !== 'v1') {
-          throw new Error('Please refresh the page');
+        if (data.version !== "v1") {
+          throw new Error("Please refresh the page");
         }
         console.log("data", data);
         setTxs(data.txs);
@@ -52,14 +52,31 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Search Celsius Transactions</title>
-        <meta name="description" content="Easily look up transactions from Celsius bankruptcy proceedings." />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616"/>
-        <meta name="msapplication-TileColor" content="#fdb500"/>
-        <meta name="theme-color" content="#fdb500"/>
+        <meta
+          name="description"
+          content="Easily look up transactions from Celsius bankruptcy proceedings."
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616" />
+        <meta name="msapplication-TileColor" content="#fdb500" />
+        <meta name="theme-color" content="#fdb500" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celsiustransactions.com" />
@@ -80,10 +97,7 @@ export default function Home() {
           property="twitter:url"
           content="https://celsiustransactions.com"
         />
-        <meta
-          property="twitter:title"
-          content="Search Celsius Transactions"
-        />
+        <meta property="twitter:title" content="Search Celsius Transactions" />
         <meta
           property="twitter:description"
           content="Easily look up transactions from Celsius bankruptcy proceedings."
@@ -95,7 +109,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title} onClick={clear}>Search Celsius Transactions</h1>
+        <h1 className={styles.title} onClick={clear}>
+          Search Celsius Transactions
+        </h1>
 
         <p className={styles.description}>
           Easily look up transactions from{" "}
@@ -180,13 +196,18 @@ export default function Home() {
         <div className={styles.footerLinks}>
           <a href="https://twitter.com/0xHyperbart" rel="noopener noreferrer">
             Twitter
-          </a> | 
-          <a href="https://github.com/0xHyperbart/celsiustransactions" rel="noopener noreferrer">
+          </a>{" "}
+          |
+          <a
+            href="https://github.com/0xHyperbart/celsiustransactions"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
         </div>
         <div className={styles.small}>
-          Best experienced on Desktop. More features coming soon &mdash; watch this space.
+          Best experienced on Desktop. More features coming soon &mdash; watch
+          this space.
         </div>
       </footer>
     </div>
