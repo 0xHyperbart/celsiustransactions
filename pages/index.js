@@ -141,7 +141,7 @@ export default function Home() {
             GitHub
           </a>
         </div>
-        <div class={styles.small}>
+        <div className={styles.small}>
           More features coming soon &mdash; watch this space.
         </div>
       </footer>
