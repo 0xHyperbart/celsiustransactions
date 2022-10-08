@@ -20,14 +20,14 @@ export default function Home() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
-          console.log("data", data);
-          setTransactions(data.transactions);
-        } else {
-          alert(
-            "Oopsie daisy, the API isn't working right now. Try again later."
-          );
+        if (!data.success) {
+          throw new Error(data.error);
         }
+        console.log("data", data);
+        setTransactions(data.transactions);
+      })
+      .catch((err) => {
+        alert(`Oopsie daisy. ${err.message}.`);
       });
   }
   return (

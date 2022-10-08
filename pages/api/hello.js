@@ -7,6 +7,13 @@ db.serialize(() => {
 
 export default function handler(req, res) {
   const { query } = req.body;
+  if (query.length < 3) {
+    res.json({
+      success: false,
+      error: "Query must be at least 3 characters",
+    });
+    return;
+  }
   db.all(
     `SELECT 
       highlight(transactions_search,0, '<b>', '</b>') address,
