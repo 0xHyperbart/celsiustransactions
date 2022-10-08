@@ -1,6 +1,6 @@
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database(
-  "./sqlite-pass-4/db.sqlite3",
+  process.env.DATABASE_PATH || "./sqlite-pass-4/db.sqlite3",
   sqlite3.OPEN_READONLY,
   (error) => {
     if (error) {
