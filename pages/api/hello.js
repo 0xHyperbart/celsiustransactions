@@ -54,7 +54,7 @@ export default function handler(req, res) {
         return;
       }
       const txs = transactions.map((tx) => Object.values(tx))
-      const response = { success: true, txs, totalCount, showingCount }
+      const response = { success: true, txs, totalCount, showingCount, version: 'v1' }
       res.status(200).json(response);
     }
   );

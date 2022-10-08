@@ -27,6 +27,9 @@ export default function Home() {
         if (!data.success) {
           throw new Error(data.error);
         }
+        if (data.version !== 'v1') {
+          throw new Error('Please refresh the page');
+        }
         console.log("data", data);
         setTxs(data.txs || []);
         setTotalCount(data.totalCount || 0);
