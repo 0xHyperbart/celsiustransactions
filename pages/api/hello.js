@@ -18,7 +18,6 @@ export default function handler(req, res) {
     });
   }
   if (query.length < 3) {
-    // TODO: check if output is too large
     res.json({
       success: false,
       error: "Query must be at least 3 characters",
