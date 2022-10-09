@@ -69,10 +69,13 @@ export default function Home() {
         }}
       />
       <Head>
-        <title>Celsius Transactions - Easily look up transactions from Celsius bankruptcy proceedings.</title>
+        <title>
+          Celsius Transactions - Easily look up coin transactions from Celsius
+          bankruptcy proceedings.
+        </title>
         <meta
           name="description"
-          content="Easily look up transactions from Celsius bankruptcy proceedings."
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
         />
         <link
           rel="apple-touch-icon"
@@ -101,7 +104,7 @@ export default function Home() {
         <meta property="og:title" content="Celsius Transactions" />
         <meta
           property="og:description"
-          content="Easily look up transactions from Celsius bankruptcy proceedings."
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
         />
         <meta
           property="og:image"
@@ -118,7 +121,7 @@ export default function Home() {
         <meta property="twitter:title" content="Celsius Transactions" />
         <meta
           property="twitter:description"
-          content="Easily look up transactions from Celsius bankruptcy proceedings."
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
         />
         <meta
           property="twitter:image"
@@ -132,7 +135,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Easily look up transactions from{" "}
+          Easily look up coin transactions from{" "}
           <a
             href="https://gizmodo.com/celsius-execs-cashed-out-bitcoin-price-crypto-ponzi-1849623526"
             rel="noopener noreferrer"
