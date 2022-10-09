@@ -227,6 +227,19 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.small}>
+          <div>Description of the data</div>
+          <p>
+            This website indexes transactions in the table &quot;Coin
+            Transactions&quot; for the &quot;SOFA Question 3: Certain payments
+            or transfers to creditors within 90 days before filing this
+            case&quot;.{" "}
+          </p>
+          <p>
+            The list of transactions doesn&apos;t include Mashinsky&apos;s
+            personal transactions.
+          </p>
+        </div>
+        <div className={styles.small}>
           Best experienced on Desktop. More features coming soon &mdash; watch
           this space.
         </div>
