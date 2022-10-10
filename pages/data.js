@@ -93,15 +93,86 @@ export default function Home() {
         </Link>
 
         <p className={styles.description}>
-          Download{" "}
-          <a
-            rel="noopener noreferrer"
-            href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
-          >
-            SQLite database
-          </a>{" "}
-          of Celsius Coin Transactions
+          Download dataset of Celsius Coin Transactions:
         </p>
+        <div style={{ display: "flex", justifyContent: "center", margin: '0 0 4rem 0' }}>
+          <table style={{ maxWidth: "400px" }}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.csv.tar.bz2"
+                  >
+                    celsiustransactions.csv.tar.bz2
+                  </a>
+                </td>
+                <td>39.5 MB</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.csv.zip"
+                  >
+                    celsiustransactions.csv.zip
+                  </a>
+                </td>
+                <td>54.4 MB</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.json.tar.bz2"
+                  >
+                    celsiustransactions.json.tar.bz2
+                  </a>
+                </td>
+                <td>40.1 MB</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.json.zip"
+                  >
+                    celsiustransactions.json.zip
+                  </a>
+                </td>
+                <td>60.8 MB</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
+                  >
+                    celsiustransactions.sqlite3.tar.bz2
+                  </a>
+                </td>
+                <td>61.8 MB</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.zip"
+                  >
+                    celsiustransactions.sqlite3.zip
+                  </a>
+                </td>
+                <td>86.6 MB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div className={styles.small}>
           Alternatively, if you just want to search transactions, you can use{" "}
           <Link href="/">celsiustransactions.com</Link>
