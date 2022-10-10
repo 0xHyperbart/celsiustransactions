@@ -225,6 +225,13 @@ export default function Home() {
           >
             GitHub
           </a>
+          |
+          <a
+            href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
+            rel="noopener noreferrer"
+          >
+            Dataset (SQLite)
+          </a>
         </div>
         <div className={styles.small}>
           <p>
