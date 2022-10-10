@@ -1,0 +1,158 @@
+import { useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
+import Script from "next/script";
+
+// TODO: pagination
+// TODO: shareable links
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-8F2M52TY44"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-8F2M52TY44');
+            `,
+        }}
+      />
+      <Head>
+        <title>
+          Celsius Transactions - Easily look up coin transactions from Celsius
+          bankruptcy proceedings.
+        </title>
+        <meta
+          name="description"
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616" />
+        <meta name="msapplication-TileColor" content="#fdb500" />
+        <meta name="theme-color" content="#fdb500" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://celsiustransactions.com" />
+        <meta property="og:title" content="Celsius Transactions" />
+        <meta
+          property="og:description"
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
+        />
+        <meta
+          property="og:image"
+          content="https://celsiustransactions.com/og.png"
+        />
+        <meta property="og:image:width" content="2400" />
+        <meta property="og:image:height" content="1200" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://celsiustransactions.com"
+        />
+        <meta property="twitter:title" content="Celsius Transactions" />
+        <meta
+          property="twitter:description"
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
+        />
+        <meta
+          property="twitter:image"
+          content="https://celsiustransactions.com/og.png"
+        />
+      </Head>
+
+      <main className={styles.main}>
+        <Link href="/data">
+          <h1 className={styles.title}>Celsius Transactions Dataset</h1>
+        </Link>
+
+        <p className={styles.description}>
+          Download{" "}
+          <a
+            rel="noopener noreferrer"
+            href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
+          >
+            SQLite database
+          </a>{" "}
+          of Celsius Coin Transactions
+        </p>
+        <div className={styles.small}>
+          Alternatively, if you just want to search transactions, you can use{" "}
+          <Link href="/">celsiustransactions.com</Link>
+        </div>
+
+        {/* <form className={styles.description} onSubmit={submit}>
+          <input
+            className={styles.inputbox}
+            name="q"
+            type="search"
+            placeholder="Username or address"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button className={styles.searchButton} disabled={loading}>
+            {loading ? "Searching" : "Search"}
+          </button>
+        </form> */}
+      </main>
+
+      <footer className={styles.footer}>
+        <div className={styles.footerLinks}>
+          <a href="https://twitter.com/0xHyperbart" rel="noopener noreferrer">
+            Twitter
+          </a>{" "}
+          |
+          <a
+            href="https://github.com/0xHyperbart/celsiustransactions"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          | <Link href="/">Search</Link>
+        </div>
+        <div className={styles.small}>
+          <p>
+            This website indexes transactions in the table &quot;Coin
+            Transactions&quot; for the &quot;SOFA Question 3: Certain payments
+            or transfers to creditors within 90 days before filing this
+            case&quot;.{" "}
+          </p>
+          <p>
+            The list of transactions doesn&apos;t include Mashinsky&apos;s
+            personal transactions.
+          </p>
+        </div>
+        <div className={styles.small}>
+          Best experienced on Desktop. More features coming soon &mdash; watch
+          this space.
+        </div>
+      </footer>
+    </div>
+  );
+}
