@@ -201,12 +201,11 @@ export default function Home() {
               <p>
                 No pagination yet, to see more results try{" "}
                 <a
-                  href="https://github.com/0xHyperbart/celsiustransactions"
+                  href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
                   rel="noopener noreferrer"
                 >
                   grepping locally
-                </a>{" "}
-                (instructions WIP)
+                </a>.
               </p>
             )}
           </div>
