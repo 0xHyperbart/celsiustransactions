@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
 
@@ -200,12 +201,7 @@ export default function Home() {
             {totalCount > showingCount && (
               <p>
                 No pagination yet, to see more results try{" "}
-                <a
-                  href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
-                  rel="noopener noreferrer"
-                >
-                  grepping locally
-                </a>.
+                <Link href="/data">grepping locally</Link>.
               </p>
             )}
           </div>
@@ -224,13 +220,7 @@ export default function Home() {
           >
             GitHub
           </a>
-          |
-          <a
-            href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
-            rel="noopener noreferrer"
-          >
-            Dataset (SQLite)
-          </a>
+          | <Link href="/data">Dataset</Link>
         </div>
         <div className={styles.small}>
           <p>
