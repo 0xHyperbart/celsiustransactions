@@ -227,7 +227,6 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.small}>
-          <div>Description of the data</div>
           <p>
             This website indexes transactions in the table &quot;Coin
             Transactions&quot; for the &quot;SOFA Question 3: Certain payments
