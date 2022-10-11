@@ -1,0 +1,25 @@
+.switchesContainer {
+    display: flex;
+    justify-content: center;
+
+}
+.switches {
+    display: flex;
+    gap: 0.5rem;
+
+}
+.networth {
+    display: flex;
+    justify-content: center;
+}
+.networth table {
+    max-width: 600px;
+}
+
+.nwMain {
+    padding: 4rem 0;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  
+}

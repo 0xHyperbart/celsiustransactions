@@ -1,5 +1,4 @@
 const mysql = require("mysql");
-console.log("process.env.DB_PASSWORD", process.env.DB_PASSWORD);
 
 const connection = mysql.createConnection({
   host: "127.0.0.1",
@@ -9,7 +8,7 @@ const connection = mysql.createConnection({
 });
 
 connection.connect(() => {
-  console.log("connection", connection);
+  console.log("Connected to MySQL!");
 });
 
 export default function handler(req, res) {
@@ -30,7 +29,7 @@ export default function handler(req, res) {
     return;
   }
 
-  connection.query(query, function (error, results, fields) {
+  connection.query(query, function (error, rows, fields) {
     if (error) {
       res.json({
         success: false,
@@ -39,6 +38,6 @@ export default function handler(req, res) {
       });
       return;
     }
-    res.status(200).json({ rows: results });
+    res.status(200).json({ people: rows });
   });
 }
