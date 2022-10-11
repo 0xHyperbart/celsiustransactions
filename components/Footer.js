@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-export default function Footer() {
+export default function Footer({ hideLink }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLinks}>
@@ -15,8 +15,16 @@ export default function Footer() {
         >
           GitHub
         </a>
-        | <Link href="/data">Dataset</Link>
-        | <Link href="/">Search</Link>
+        {hideLink !== "dataset" ? (
+          <>
+            | <Link href="/data">Dataset</Link>
+          </>
+        ) : null}
+        {hideLink !== "search" ? (
+          <>
+            | <Link href="/">Search</Link>
+          </>
+        ) : null}
       </div>
       <div className={styles.small}>
         <p>

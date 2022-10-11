@@ -136,7 +136,7 @@ export default function Home() {
           </div>
         ) : null}
       </main>
-      <Footer />
+      <Footer hideLink="search" />
     </div>
   );
 }
