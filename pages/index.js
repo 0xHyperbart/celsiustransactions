@@ -9,10 +9,6 @@ import { useRouter } from "next/router";
 export default function Home() {
   const [queryInput, setQueryInput] = useState("");
   const router = useRouter();
-  const loading = false;
-  const txs = null;
-  const totalCount = 0;
-  const showingCount = 0;
   function submit(e) {
     e.preventDefault();
     router.push(`/search/${queryInput}`);
@@ -52,57 +48,8 @@ export default function Home() {
             value={queryInput}
             onChange={(e) => setQueryInput(e.target.value)}
           />
-          <button className={styles.searchbtn} disabled={loading}>
-            {loading ? "Searching" : "Search"}
-          </button>
+          <button className={styles.searchbtn}>Search</button>
         </form>
-
-        {txs !== null ? (
-          <table className={styles.transactions}>
-            <thead>
-              <tr>
-                <th>USERNAME</th>
-                <th>ADDRESS</th>
-                <th>DATE</th>
-                <th>ACCOUNT</th>
-                <th>TYPE</th>
-                <th>Descriptive Purpose</th>
-                <th>COIN</th>
-                <th>COIN QUANTITY</th>
-                <th>COIN USD</th>
-              </tr>
-            </thead>
-            <tbody>
-              {txs.map((tx, i) => (
-                <tr key={i}>
-                  <td dangerouslySetInnerHTML={{ __html: tx[0] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[1] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[2] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[3] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[4] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[5] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[6] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[7] }}></td>
-                  <td dangerouslySetInnerHTML={{ __html: tx[8] }}></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : null}
-
-        {txs !== null ? (
-          <div className={styles.gutter}>
-            <p>
-              Showing {showingCount} out of {totalCount}
-            </p>
-            {totalCount > showingCount && (
-              <p>
-                No pagination yet, to see more results try{" "}
-                <Link href="/data">grepping locally</Link>.
-              </p>
-            )}
-          </div>
-        ) : null}
       </main>
       <Footer hideLink="search" />
     </>
