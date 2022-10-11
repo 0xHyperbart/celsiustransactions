@@ -33,7 +33,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings"
         />
         <link
           rel="apple-touch-icon"
@@ -62,7 +62,7 @@ export default function Home() {
         <meta property="og:title" content="Celsius Transactions Dataset" />
         <meta
           property="og:description"
-          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings"
         />
         <meta
           property="og:image"
@@ -79,7 +79,7 @@ export default function Home() {
         <meta property="twitter:title" content="Celsius Transactions Dataset" />
         <meta
           property="twitter:description"
-          content="Easily look up coin transactions from Celsius bankruptcy proceedings."
+          content="Easily look up coin transactions from Celsius bankruptcy proceedings"
         />
         <meta
           property="twitter:image"
