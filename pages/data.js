@@ -178,19 +178,6 @@ export default function Home() {
           <Link href="/">celsiustransactions.com</Link>
         </div>
 
-        {/* <form className={styles.description} onSubmit={submit}>
-          <input
-            className={styles.inputbox}
-            name="q"
-            type="search"
-            placeholder="Username or address"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button className={styles.searchButton} disabled={loading}>
-            {loading ? "Searching" : "Search"}
-          </button>
-        </form> */}
       </main>
 
       <footer className={styles.footer}>
