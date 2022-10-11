@@ -1,23 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
-import Footer from "../components/Footer";
-import MetaTags from "../components/MetaTags";
-import { useRouter } from "next/router";
+import styles from "../../styles/Home.module.css";
+import Footer from "../../components/Footer";
+import MetaTags from "../../components/MetaTags";
+import { useRouter } from 'next/router'
 
 // TODO: pagination
 export default function Home() {
-  const [queryInput, setQueryInput] = useState("");
   const router = useRouter();
-  const loading = false;
-  const txs = null;
-  const totalCount = 0;
-  const showingCount = 0;
+  const query = router.query.q;
+  const [queryInput, setQueryInput] = useState(query || "");
+  const [loading, setLoading] = useState(false);
+  const [txs, setTxs] = useState(null);
+  const [totalCount, setTotalCount] = useState(0);
+  const [showingCount, setShowingCount] = useState(0);
   function submit(e) {
     e.preventDefault();
-    router.push(`/search/${queryInput}`);
+    if (queryInput) {
+      router.push(`/search/${queryInput}`);
+    }
+    else {
+      router.push(`/`);
+    }
   }
+  useEffect(() => {
+    function load(query) {
+      setLoading(true);
 
+      fetch("/api/search", {
+        method: "POST",
+        body: JSON.stringify({
+          query,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data.success) {
+            throw new Error(data.error);
+          }
+          if (data.version !== "v1") {
+            throw new Error("Please refresh the page");
+          }
+          console.log("data", data);
+          setTxs(data.txs);
+          setTotalCount(data.totalCount || 0);
+          setShowingCount(data.showingCount || 0);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
+          alert(`Oopsie daisy. ${err.message}.`);
+        });
+    }
+    load(query);
+  }, [query]);
   return (
     <>
       <MetaTags
