@@ -40,7 +40,7 @@ export default function NetWorth() {
         title="Celsius Transactions - Easily look up coin transactions from Celsius
           bankruptcy proceedings"
         canonical={`https://celsiustransactions.com/person/${username}`}
-        og="https://celsiustransactions.com/og4.png"
+        og="https://celsiustransactions.com/og3.png"
         cardTitle={`Celsius Transactions - ${username} Net Worth`}
       />
 
