@@ -12,7 +12,7 @@ export default function NetWorth() {
   const [people, setPeople] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      const request = await fetch(`/api/networth?type=${type}`);
+      const request = await fetch(`/api/networth/${type}`);
       const data = await request.json();
       setPeople(data.people);
     };
