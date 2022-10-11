@@ -21,14 +21,10 @@
 }
 
 .loadTransactions {
-  /* margin: 2rem 0; */
   line-height: 1.5;
-  /* font-size: 1rem; */
 }
 
 @media (max-width: 600px) {
   .loadTransactions {
-    /* font-size: 0.8666666666666667rem; */
-    /* padding: 0 1rem; */
   }
 }
