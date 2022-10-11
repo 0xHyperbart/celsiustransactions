@@ -36,11 +36,11 @@ export default function NetWorth() {
   return (
     <>
       <MetaTags
-        title="Celsius Transactions - Easily look up coin transactions from Celsius
-          bankruptcy proceedings"
-        canonical={`https://celsiustransactions.com/person/${username}`}
+        title="Celsius Net Worth Leaderboard - Easily look up coin transactions from Celsius
+        bankruptcy proceedings"
+        canonical="https://celsiustransactions.com/networth"
         og="https://celsiustransactions.com/og3.png"
-        cardTitle={`Celsius Transactions - ${username} Net Worth`}
+        cardTitle="Celsius Net Worth Leaderboard"
       />
 
       <main className={nwStyles.nwMain}>
