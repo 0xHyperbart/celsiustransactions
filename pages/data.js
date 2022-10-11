@@ -4,89 +4,20 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
 import Footer from "../components/Footer";
+import MetaTags from "../components/MetaTags";
 
 // TODO: pagination
 // TODO: shareable links
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-8F2M52TY44"
+      <MetaTags
+        title="Celsius Transactions - Easily look up coin transactions from Celsius
+          bankruptcy proceedings - Dataset"
+        canonical="https://celsiustransactions.com/data"
+        og="https://celsiustransactions.com/og2.png"
+        cardTitle="Celsius Transactions Dataset"
       />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-8F2M52TY44');
-            `,
-        }}
-      />
-      <Head>
-        <title>
-          Celsius Transactions - Easily look up coin transactions from Celsius
-          bankruptcy proceedings - Dataset
-        </title>
-        <meta
-          name="description"
-          content="Easily look up coin transactions from Celsius bankruptcy proceedings"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99616" />
-        <meta name="msapplication-TileColor" content="#fdb500" />
-        <meta name="theme-color" content="#fdb500" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://celsiustransactions.com/data" />
-        <meta property="og:title" content="Celsius Transactions Dataset" />
-        <meta
-          property="og:description"
-          content="Easily look up coin transactions from Celsius bankruptcy proceedings"
-        />
-        <meta
-          property="og:image"
-          content="https://celsiustransactions.com/og2.png"
-        />
-        <meta property="og:image:width" content="2400" />
-        <meta property="og:image:height" content="1200" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://celsiustransactions.com/data"
-        />
-        <meta property="twitter:title" content="Celsius Transactions Dataset" />
-        <meta
-          property="twitter:description"
-          content="Easily look up coin transactions from Celsius bankruptcy proceedings"
-        />
-        <meta
-          property="twitter:image"
-          content="https://celsiustransactions.com/og2.png"
-        />
-      </Head>
 
       <main className={styles.main}>
         <Link href="/data">
