@@ -54,7 +54,9 @@ export default function Home() {
           alert(`Oopsie daisy. ${err.message}.`);
         });
     }
-    load(query);
+    if (query) {
+      load(query);
+    }
   }, [query]);
   return (
     <>

@@ -4,11 +4,8 @@ import homeStyles from "../styles/Home.module.css";
 import nwStyles from "../styles/NetWorth.module.css";
 import Footer from "../components/Footer";
 import MetaTags from "../components/MetaTags";
-import { useRouter } from "next/router";
 
-export default function NetWorth() {
-  const router = useRouter();
-  const type = router.query.type || "individual";
+export default function NetWorth({ type }) {
   const [people, setPeople] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +13,9 @@ export default function NetWorth() {
       const data = await request.json();
       setPeople(data.people);
     };
-    fetchData();
+    if (type) {
+      fetchData();
+    }
   }, [type]);
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
