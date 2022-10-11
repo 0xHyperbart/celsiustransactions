@@ -1,8 +1,5 @@
-import { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import Script from "next/script";
 import Footer from "../components/Footer";
 import MetaTags from "../components/MetaTags";
 
