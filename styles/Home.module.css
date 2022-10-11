@@ -17,6 +17,15 @@
   background-color: hsl(43deg 100% 73%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .transactions tbody tr:hover {
+    background-color: hsl(43deg 100% 14%);
+  }
+  .transactions thead {
+    background-color: hsl(43deg 100% 27%);
+  }
+}
+
 .main {
   min-height: 100vh;
   padding: 2rem 0;
