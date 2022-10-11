@@ -6,8 +6,31 @@ import Script from "next/script";
 import Footer from "../components/Footer";
 import MetaTags from "../components/MetaTags";
 
-// TODO: pagination
-// TODO: shareable links
+function DownloadsTable({ files }) {
+  return (
+    <table style={{ maxWidth: "400px" }}>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        {files.map((file) => (
+          <tr key={file.url}>
+            <td>
+              <a rel="noopener noreferrer" href={file.url}>
+                {file.url.split("/").reverse()[0]}
+              </a>
+            </td>
+            <td>{file.size}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -34,82 +57,34 @@ export default function Home() {
             margin: "0 0 4rem 0",
           }}
         >
-          <table style={{ maxWidth: "400px" }}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Size</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.csv.tar.bz2"
-                  >
-                    celsiustransactions.csv.tar.bz2
-                  </a>
-                </td>
-                <td>39.5 MB</td>
-              </tr>
-              <tr>
-                <td>
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.csv.zip"
-                  >
-                    celsiustransactions.csv.zip
-                  </a>
-                </td>
-                <td>54.4 MB</td>
-              </tr>
-              <tr>
-                <td>
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.json.tar.bz2"
-                  >
-                    celsiustransactions.json.tar.bz2
-                  </a>
-                </td>
-                <td>40.1 MB</td>
-              </tr>
-              <tr>
-                <td>
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.json.zip"
-                  >
-                    celsiustransactions.json.zip
-                  </a>
-                </td>
-                <td>60.8 MB</td>
-              </tr>
-              <tr>
-                <td>
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2"
-                  >
-                    celsiustransactions.sqlite3.tar.bz2
-                  </a>
-                </td>
-                <td>61.8 MB</td>
-              </tr>
-              <tr>
-                <td>
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.zip"
-                  >
-                    celsiustransactions.sqlite3.zip
-                  </a>
-                </td>
-                <td>86.6 MB</td>
-              </tr>
-            </tbody>
-          </table>
+          <DownloadsTable
+            files={[
+              {
+                url: "https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.csv.tar.bz2",
+                size: "39.5 MB",
+              },
+              {
+                url: "https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.csv.zip",
+                size: "54.4 MB",
+              },
+              {
+                url: "https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.json.tar.bz2",
+                size: "40.1 MB",
+              },
+              {
+                url: "https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.json.zip",
+                size: "60.8 MB",
+              },
+              {
+                url: "https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.tar.bz2",
+                size: "61.8 MB",
+              },
+              {
+                url: "https://f004.backblazeb2.com/file/celsiustransactions/celsiustransactions.sqlite3.zip",
+                size: "86.6 MB",
+              },
+            ]}
+          />
         </div>
         <div className={styles.small}>
           Alternatively, if you just want to search transactions, you can use{" "}
