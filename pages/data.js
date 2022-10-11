@@ -27,7 +27,13 @@ export default function Home() {
         <p className={styles.description}>
           Download dataset of Celsius Coin Transactions:
         </p>
-        <div style={{ display: "flex", justifyContent: "center", margin: '0 0 4rem 0' }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "0 0 4rem 0",
+          }}
+        >
           <table style={{ maxWidth: "400px" }}>
             <thead>
               <tr>
