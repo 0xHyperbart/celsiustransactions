@@ -44,19 +44,19 @@ export default function NetWorth() {
             {type === "individual" ? (
               <span>Individual</span>
             ) : (
-              <Link href="/networth?type=individual">Individual</Link>
+              <Link href="/networth/individual">Individual</Link>
             )}{" "}
             |{" "}
             {type === "entity" ? (
               <span>Legal entity</span>
             ) : (
-              <Link href="/networth?type=entity">Legal entity</Link>
+              <Link href="/networth/entity">Legal entity</Link>
             )}{" "}
             |{" "}
             {type === "both" ? (
               <span>Both</span>
             ) : (
-              <Link href="/networth?type=both">Both</Link>
+              <Link href="/networth/both">Both</Link>
             )}
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function NetWorth() {
             <tbody>
               {people
                 ? people.map((person, i) => (
-                    <tr key={i}>
+                    <tr key={person.schedule}>
                       <td>{i + 1}</td>
                       <td><Link href={`/person/${person.name}`}>{person.name}</Link></td>
                       <td>{formatter.format(person.networth)}</td>
