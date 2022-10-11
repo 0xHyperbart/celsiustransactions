@@ -80,7 +80,7 @@ export default function NetWorth() {
         </div>
       </main>
 
-      <Footer hideLink="networth" />
+      <Footer />
     </>
   );
 }
