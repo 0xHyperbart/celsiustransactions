@@ -50,6 +50,9 @@ export default function Home() {
           />
           <button className={styles.searchbtn}>Search</button>
         </form>
+        <p className={styles.small}>
+          Or check out the <Link href="/networth">Net Worth Leaderboard</Link>.
+        </p>
       </main>
       <Footer hideLink="search" />
     </>

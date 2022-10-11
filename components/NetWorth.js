@@ -26,17 +26,17 @@ export default function NetWorth() {
   return (
     <>
       <MetaTags
-        title="Celsius Net Worth - Easily look up coin transactions from Celsius
+        title="Celsius Net Worth Leaderboard - Easily look up coin transactions from Celsius
           bankruptcy proceedings"
         canonical="https://celsiustransactions.com/networth"
         og="https://celsiustransactions.com/og3.png"
-        cardTitle="Celsius Net Worth"
+        cardTitle="Celsius Net Worth Leaderboard"
       />
 
       <main className={nwStyles.nwMain}>
         <Link href="/networth">
           <h1 className={[homeStyles.title, nwStyles.title].join(" ")}>
-            Celsius Net Worth
+            Celsius Net Worth Leaderboard
           </h1>
         </Link>
         <div className={nwStyles.switchesContainer}>
