@@ -25,6 +25,11 @@ export default function Footer({ hideLink }) {
             | <Link href="/">Search</Link>
           </>
         ) : null}
+        {hideLink !== "networth" ? (
+          <>
+            | <Link href="/networth">Net Worth</Link>
+          </>
+        ) : null}
       </div>
       <div className={styles.small}>
         <p>
