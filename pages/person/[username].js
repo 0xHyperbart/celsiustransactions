@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 export default function NetWorth() {
   const router = useRouter();
   const username = router.query.username;
-  console.log("username", username);
   const [assets, setAssets] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
