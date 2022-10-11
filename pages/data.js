@@ -29,7 +29,7 @@ export default function Home() {
       <Head>
         <title>
           Celsius Transactions - Easily look up coin transactions from Celsius
-          bankruptcy proceedings.
+          bankruptcy proceedings - Dataset
         </title>
         <meta
           name="description"
@@ -59,14 +59,14 @@ export default function Home() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://celsiustransactions.com" />
-        <meta property="og:title" content="Celsius Transactions" />
+        <meta property="og:title" content="Celsius Transactions Dataset" />
         <meta
           property="og:description"
           content="Easily look up coin transactions from Celsius bankruptcy proceedings."
         />
         <meta
           property="og:image"
-          content="https://celsiustransactions.com/og.png"
+          content="https://celsiustransactions.com/og2.png"
         />
         <meta property="og:image:width" content="2400" />
         <meta property="og:image:height" content="1200" />
@@ -76,14 +76,14 @@ export default function Home() {
           property="twitter:url"
           content="https://celsiustransactions.com"
         />
-        <meta property="twitter:title" content="Celsius Transactions" />
+        <meta property="twitter:title" content="Celsius Transactions Dataset" />
         <meta
           property="twitter:description"
           content="Easily look up coin transactions from Celsius bankruptcy proceedings."
         />
         <meta
           property="twitter:image"
-          content="https://celsiustransactions.com/og.png"
+          content="https://celsiustransactions.com/og2.png"
         />
       </Head>
 
