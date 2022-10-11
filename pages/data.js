@@ -30,7 +30,7 @@ function DownloadsTable({ files }) {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <MetaTags
         title="Celsius Transactions - Easily look up coin transactions from Celsius
           bankruptcy proceedings - Dataset"
@@ -90,6 +90,6 @@ export default function Home() {
       </main>
 
       <Footer hideLink="dataset" />
-    </div>
+    </>
   );
 }

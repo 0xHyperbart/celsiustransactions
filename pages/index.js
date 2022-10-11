@@ -51,7 +51,7 @@ export default function Home() {
       });
   }
   return (
-    <div className={styles.container}>
+    <>
       <MetaTags
         title="Celsius Transactions - Easily look up coin transactions from Celsius
           bankruptcy proceedings"
@@ -106,7 +106,7 @@ export default function Home() {
             </thead>
             <tbody>
               {txs.map((tx, i) => (
-                <tr key={i} className={styles.transaction}>
+                <tr key={i}>
                   <td dangerouslySetInnerHTML={{ __html: tx[0] }}></td>
                   <td dangerouslySetInnerHTML={{ __html: tx[1] }}></td>
                   <td dangerouslySetInnerHTML={{ __html: tx[2] }}></td>
@@ -137,6 +137,6 @@ export default function Home() {
         ) : null}
       </main>
       <Footer hideLink="search" />
-    </div>
+    </>
   );
 }
