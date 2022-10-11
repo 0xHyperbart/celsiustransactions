@@ -1,0 +1,16 @@
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.lost {
+  color: hsl(43deg 100% 27%);
+}
+@media (prefers-color-scheme: dark) {
+  .lost {
+    color: hsl(43deg 100% 73%);
+  }
+}

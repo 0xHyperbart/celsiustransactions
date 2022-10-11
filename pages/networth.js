@@ -75,7 +75,7 @@ export default function NetWorth() {
                 ? people.map((person, i) => (
                     <tr key={i}>
                       <td>{i + 1}</td>
-                      <td>{person.name}</td>
+                      <td><Link href={`/person/${person.name}`}>{person.name}</Link></td>
                       <td>{formatter.format(person.networth)}</td>
                     </tr>
                   ))
