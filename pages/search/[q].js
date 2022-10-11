@@ -114,7 +114,7 @@ export default function Home() {
             <tbody>
               {txs.map((tx, i) => (
                 <tr key={i}>
-                  <td dangerouslySetInnerHTML={{ __html: tx[0] }}></td>
+                  <td><a href={`/person/${tx[0].replace(/<b>/g,'').replace(/<\/b>/g,'')}`}><span dangerouslySetInnerHTML={{ __html: tx[0] }}></span></a></td>
                   <td dangerouslySetInnerHTML={{ __html: tx[1] }}></td>
                   <td dangerouslySetInnerHTML={{ __html: tx[2] }}></td>
                   <td dangerouslySetInnerHTML={{ __html: tx[3] }}></td>
