@@ -58,7 +58,7 @@ export default function Home() {
         <meta name="theme-color" content="#fdb500" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://celsiustransactions.com" />
+        <meta property="og:url" content="https://celsiustransactions.com/data" />
         <meta property="og:title" content="Celsius Transactions Dataset" />
         <meta
           property="og:description"
@@ -74,7 +74,7 @@ export default function Home() {
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:url"
-          content="https://celsiustransactions.com"
+          content="https://celsiustransactions.com/data"
         />
         <meta property="twitter:title" content="Celsius Transactions Dataset" />
         <meta
