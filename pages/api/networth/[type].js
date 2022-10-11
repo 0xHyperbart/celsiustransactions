@@ -1,14 +1,16 @@
-const mysql = require("mysql");
+const sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database(
+  process.env.NW_DATABASE_PATH || "./sqlite-pass-4/nw.sqlite3",
+  sqlite3.OPEN_READONLY,
+  (error) => {
+    if (error) {
+      console.log("sqlite error", error);
+    }
+  }
+);
 
-const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: process.env.DB_PASSWORD,
-  database: "celsius",
-});
-
-connection.connect(() => {
-  console.log("Connected to MySQL!");
+db.serialize(() => {
+  console.log("ready");
 });
 
 export default function handler(req, res) {
@@ -29,7 +31,7 @@ export default function handler(req, res) {
     return;
   }
 
-  connection.query(query, function (error, rows, fields) {
+  db.all(query, function (error, rows) {
     if (error) {
       res.json({
         success: false,
