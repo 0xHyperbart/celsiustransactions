@@ -40,6 +40,10 @@ export default function handler(req, res) {
       });
       return;
     }
-    res.status(200).json({ people: rows });
+    res.status(200).json({ 
+      success: true,
+      people: rows,
+      version: "v1",
+     });
   });
 }
