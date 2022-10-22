@@ -74,7 +74,11 @@ export default function NetWorth({ type }) {
                 ? people.map((person, i) => (
                     <tr key={person.schedule}>
                       <td>{i + 1}</td>
-                      <td><Link href={`/person/${person.name}`}>{person.name}</Link></td>
+                      <td>
+                        <Link href={`/person/${person.name}`}>
+                          {person.name}
+                        </Link>
+                      </td>
                       <td>{formatter.format(person.networth)}</td>
                     </tr>
                   ))
