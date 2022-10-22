@@ -8,9 +8,9 @@ module.exports.createPromisifiedDB = function createPromisifiedDB(
     serialize(cb) {
       sqliteDB.serialize(cb);
     },
-    all(query) {
+    all(query, params) {
       return new Promise((resolve, reject) => {
-        sqliteDB.all(query, function (error, rows) {
+        sqliteDB.all(query, params, function (error, rows) {
           if (error) {
             reject(error);
           }
