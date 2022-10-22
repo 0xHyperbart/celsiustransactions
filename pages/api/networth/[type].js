@@ -1,7 +1,7 @@
-const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database(
+const { createPromisifiedDB } = require("../../../utils/db");
+
+const db = createPromisifiedDB(
   process.env.NW_DATABASE_PATH || "./sqlite-pass-4/nw.sqlite3",
-  sqlite3.OPEN_READONLY,
   (error) => {
     if (error) {
       console.log("sqlite error", error);
@@ -32,14 +32,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const rows = await new Promise((resolve, reject) => {
-      db.all(query, function (error, rows) {
-        if (error) {
-          reject(error);
-        }
-        resolve(rows);
-      });
-    });
+    const rows = await db.all(query);
     res.status(200).json({
       success: true,
       people: rows,
