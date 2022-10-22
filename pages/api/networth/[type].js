@@ -15,14 +15,14 @@ db.serialize(() => {
 });
 
 async function networth(req) {
-  const { type } = req.query;
+  const { type, skip } = req.query;
   let query;
   if (type == "individual") {
-    query = `SELECT * FROM People WHERE People.address = 'ADDRESS REDACTED' ORDER BY networth DESC LIMIT 50`;
+    query = `SELECT * FROM People WHERE People.address = 'ADDRESS REDACTED' ORDER BY networth DESC LIMIT 50 OFFSET ${skip}`;
   } else if (type == "entity") {
-    query = `SELECT * FROM People WHERE People.address != 'ADDRESS REDACTED' ORDER BY networth DESC LIMIT 50`;
+    query = `SELECT * FROM People WHERE People.address != 'ADDRESS REDACTED' ORDER BY networth DESC LIMIT 50 OFFSET ${skip}`;
   } else if (type == "both") {
-    query = `SELECT * FROM People ORDER BY networth DESC LIMIT 50`;
+    query = `SELECT * FROM People ORDER BY networth DESC LIMIT 50 OFFSET ${skip}`;
   } else {
     throw new Error("Invalid type");
   }

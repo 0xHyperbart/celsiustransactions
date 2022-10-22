@@ -1,22 +1,54 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import homeStyles from "../styles/Home.module.css";
 import nwStyles from "../styles/NetWorth.module.css";
 import Footer from "../components/Footer";
 import MetaTags from "../components/MetaTags";
 
+function unionBy(arr1, arr2, key) {
+  const set = new Set();
+  return [...arr1, ...arr2].filter((o) =>
+    set.has(o[key]) ? false : set.add(o[key])
+  );
+}
+
 export default function NetWorth({ type }) {
   const [people, setPeople] = useState(null);
+  const infiniteScrollMarker = useRef(null);
+
   useEffect(() => {
-    const fetchData = async () => {
-      const request = await fetch(`/api/networth/${type}`);
-      const data = await request.json();
-      setPeople(data.people);
-    };
-    if (type) {
-      fetchData();
-    }
+    setPeople(null);
   }, [type]);
+  useEffect(() => {
+    const peopleArray = people ?? [];
+    async function loadMore() {
+      console.log("loadMore");
+      const request = await fetch(
+        `/api/networth/${type}?skip=${peopleArray.length}`
+      );
+      const data = await request.json();
+
+      console.log("data", data);
+      const newPeople = unionBy(peopleArray, data.people, "schedule").sort(
+        (a, b) => b.networth - a.networth
+      );
+      setPeople(newPeople);
+    }
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting > 0) {
+          if (type) {
+            loadMore();
+          }
+        }
+      });
+    });
+    observer.observe(infiniteScrollMarker.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [people, type]);
+
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -85,6 +117,7 @@ export default function NetWorth({ type }) {
                 : null}
             </tbody>
           </table>
+          <div ref={infiniteScrollMarker} />
         </div>
       </main>
 

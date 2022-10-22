@@ -10,7 +10,8 @@
 }
 .nwContainer {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .nwContainer table {
   width: 600px;
