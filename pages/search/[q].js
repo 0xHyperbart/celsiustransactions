@@ -68,7 +68,7 @@ export default function Home(props) {
       <MetaTags
         title="Celsius Transactions - Easily look up coin transactions from Celsius
           bankruptcy proceedings"
-        canonical="https://celsiustransactions.com"
+        canonical={`https://celsiustransactions.com/search/${query}`}
         og={`/api/ogSearch/${query}`}
         cardTitle={`Search '${query}' in Celsius Transactions`}
       />
