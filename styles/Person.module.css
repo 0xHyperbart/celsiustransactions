@@ -23,8 +23,3 @@
 .loadTransactions {
   line-height: 1.5;
 }
-
-@media (max-width: 600px) {
-  .loadTransactions {
-  }
-}
