@@ -94,7 +94,7 @@ export default function Home() {
 
         <form className={styles.description} onSubmit={submit}>
           <input
-            className={styles.inputbox}
+            className={styles.inputBox}
             name="q"
             type="search"
             placeholder="Username or address"

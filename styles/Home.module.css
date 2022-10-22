@@ -121,7 +121,7 @@
   color: red;
 }
 
-.inputbox {
+.inputBox {
   line-height: 1.5;
   font-size: 1.5rem;
   border: 1px solid #ccc;
@@ -132,7 +132,7 @@
 }
 
 @media (max-width: 600px) {
-  .inputbox {
+  .inputBox {
     width: 18rem;
     border-right: 1px solid #ccc;
   }
