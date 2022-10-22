@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 export default function Home() {
   const router = useRouter();
   const query = router.query.q;
-  const [queryInput, setQueryInput] = useState(query || "");
+  const [queryInput, setQueryInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [txs, setTxs] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
@@ -23,6 +23,15 @@ export default function Home() {
       router.push(`/`);
     }
   }
+
+  useEffect(() => {
+    if (router.isReady) {
+      if (queryInput === "") {
+        setQueryInput(query);
+      }
+    }
+  }, [router.isReady, queryInput, query]);
+
   useEffect(() => {
     function load(query) {
       setLoading(true);
