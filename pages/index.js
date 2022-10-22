@@ -47,7 +47,7 @@ export default function Home() {
             value={queryInput}
             onChange={(e) => setQueryInput(e.target.value)}
           />
-          <button className={styles.searchbtn}>Search</button>
+          <button className={styles.searchBtn}>Search</button>
         </form>
         <p className={styles.small}>
           Or check out the <Link href="/networth">Net Worth Leaderboard</Link>.

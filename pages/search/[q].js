@@ -101,7 +101,7 @@ export default function Home() {
             value={queryInput}
             onChange={(e) => setQueryInput(e.target.value)}
           />
-          <button className={styles.searchbtn} disabled={loading}>
+          <button className={styles.searchBtn} disabled={loading}>
             {loading ? "Searching" : "Search"}
           </button>
         </form>

@@ -138,7 +138,7 @@
   }
 }
 
-.searchbtn {
+.searchBtn {
   line-height: 1.5;
   font-size: 1.5rem;
   width: 10rem;
@@ -147,13 +147,13 @@
   font-weight: 500;
 }
 @media (prefers-color-scheme: dark) {
-  .searchbtn {
+  .searchBtn {
     background-color: hsl(43deg 100% 37%);
   }
 }
 
 @media (max-width: 600px) {
-  .searchbtn {
+  .searchBtn {
     margin-top: 1rem;
   }
 }
