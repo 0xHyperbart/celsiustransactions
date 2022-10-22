@@ -13,7 +13,7 @@ db.serialize(() => {
   console.log("ready");
 });
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const type = req.query.type;
   let query;
   if (type == "individual") {
@@ -31,19 +31,25 @@ export default function handler(req, res) {
     return;
   }
 
-  db.all(query, function (error, rows) {
-    if (error) {
-      res.json({
-        success: false,
-        error: error.message,
-        version: "v1",
+  try {
+    const rows = await new Promise((resolve, reject) => {
+      db.all(query, function (error, rows) {
+        if (error) {
+          reject(error);
+        }
+        resolve(rows);
       });
-      return;
-    }
-    res.status(200).json({ 
+    });
+    res.status(200).json({
       success: true,
       people: rows,
       version: "v1",
-     });
-  });
+    });
+  } catch (error) {
+    res.json({
+      success: false,
+      error: error.message,
+      version: "v1",
+    });
+  }
 }
