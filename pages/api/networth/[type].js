@@ -14,7 +14,7 @@ db.serialize(() => {
   console.log("ready");
 });
 
-async function perform(req) {
+async function networth(req) {
   const { type } = req.query;
   let query;
   if (type == "individual") {
@@ -32,5 +32,5 @@ async function perform(req) {
 }
 
 export default async function handler(req, res) {
-  return handle(req, res, perform);
+  return handle(req, res, networth);
 }
