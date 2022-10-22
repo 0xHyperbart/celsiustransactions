@@ -8,9 +8,14 @@ import Footer from "../../components/Footer";
 import MetaTags from "../../components/MetaTags";
 import { useRouter } from "next/router";
 
-export default function NetWorth() {
-  const router = useRouter();
-  const username = router.query.username;
+export function getServerSideProps(context) {
+  return {
+    props: { params: context.params },
+  };
+}
+
+export default function Person(props) {
+  const username = props.params.username;
   const [assets, setAssets] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +44,7 @@ export default function NetWorth() {
         title="Celsius Net Worth Leaderboard - Easily look up coin transactions from Celsius
         bankruptcy proceedings"
         canonical="https://celsiustransactions.com/networth"
-        og="https://celsiustransactions.com/og3.png"
+        og={`/api/og/${username}`}
         cardTitle="Celsius Net Worth Leaderboard"
       />
 
