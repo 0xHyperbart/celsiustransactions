@@ -1,7 +1,8 @@
-const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database(
+const { createPromisifiedDB } = require("../../../utils/db");
+const { handle } = require("../../../utils/response");
+
+const db = createPromisifiedDB(
   process.env.NW_DATABASE_PATH || "./sqlite-pass-4/nw.sqlite3",
-  sqlite3.OPEN_READONLY,
   (error) => {
     if (error) {
       console.log("sqlite error", error);
@@ -13,21 +14,15 @@ db.serialize(() => {
   console.log("ready");
 });
 
-export default function handler(req, res) {
-  const username = req.query.username;
+async function assets(req) {
+  const { username } = req.query;
   let query = `SELECT * FROM People
   LEFT JOIN Assets ON Assets.schedule = People.schedule
-  WHERE People.name = ?`
+  WHERE People.name = ?`;
+  const assets = await db.all(query, [username]);
+  return { assets };
+}
 
-  db.all(query, [username], function (error, rows) {
-    if (error) {
-      res.json({
-        success: false,
-        error: error.message,
-        version: "v1",
-      });
-      return;
-    }
-    res.status(200).json({ assets: rows });
-  });
+export default function handler(req, res) {
+  return handle(req, res, assets);
 }
