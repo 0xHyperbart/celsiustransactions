@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import MetaTags from "../components/MetaTags";
 import { useRouter } from "next/router";
 
-// TODO: pagination
 export default function Home() {
   const [queryInput, setQueryInput] = useState("");
   const router = useRouter();
