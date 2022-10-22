@@ -41,6 +41,16 @@ export default function Footer({ hideLink }) {
           The list of transactions doesn&apos;t include Mashinsky&apos;s
           personal transactions.
         </p>
+        <p>
+          Net Worth Leaderboard is collated based on{" "}
+          <a
+            href="https://github.com/0xHyperbart/celsius-pdf-data"
+            rel="noopener noreferrer"
+          >
+            celsius-pdf-data
+          </a>
+          .
+        </p>
       </div>
       <div className={styles.small}>
         Best experienced on Desktop. More features coming soon &mdash; watch
