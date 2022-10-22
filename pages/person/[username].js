@@ -45,7 +45,7 @@ export default function Person(props) {
         bankruptcy proceedings"
         canonical={`https://celsiustransactions.com/person/${username}`}
         og={`/api/og/${username}`}
-        cardTitle="Celsius Net Worth Leaderboard"
+        cardTitle={`See ${username}'s Net Worth in Celsius`}
       />
 
       <main className={nwStyles.nwMain}>
