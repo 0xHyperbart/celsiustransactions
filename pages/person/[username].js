@@ -6,7 +6,6 @@ import personStyles from "../../styles/Person.module.css";
 
 import Footer from "../../components/Footer";
 import MetaTags from "../../components/MetaTags";
-import { useRouter } from "next/router";
 
 export function getServerSideProps(context) {
   return {
