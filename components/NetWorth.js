@@ -86,6 +86,7 @@ export default function NetWorth({ type }) {
             ) : (
               <Link href="/networth/both">Both</Link>
             )}
+            | <Link href="/">Homepage</Link>
           </div>
         </div>
 
