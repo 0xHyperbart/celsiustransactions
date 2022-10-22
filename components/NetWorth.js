@@ -60,7 +60,7 @@ export default function NetWorth({ type }) {
           </div>
         </div>
 
-        <div className={nwStyles.networth}>
+        <div className={nwStyles.nwContainer}>
           <table className={homeStyles.transactions}>
             <thead>
               <tr>

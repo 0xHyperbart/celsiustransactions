@@ -50,7 +50,7 @@ export default function NetWorth() {
           in Celsius
         </h1>
 
-        <div className={nwStyles.networth}>
+        <div className={nwStyles.nwContainer}>
           <table className={homeStyles.transactions}>
             <thead>
               <tr>

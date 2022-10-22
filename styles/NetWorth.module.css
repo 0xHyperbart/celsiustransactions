@@ -8,11 +8,11 @@
   gap: 0.5rem;
 
 }
-.networth {
+.nwContainer {
   display: flex;
   justify-content: center;
 }
-.networth table {
+.nwContainer table {
   width: 600px;
 }
 
