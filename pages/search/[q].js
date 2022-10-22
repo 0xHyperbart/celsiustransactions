@@ -3,13 +3,17 @@ import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 import Footer from "../../components/Footer";
 import MetaTags from "../../components/MetaTags";
-import { useRouter } from 'next/router'
+
+export function getServerSideProps(context) {
+  return {
+    props: { params: context.params },
+  };
+}
 
 // TODO: pagination
-export default function Home() {
-  const router = useRouter();
-  const query = router.query.q;
-  const [queryInput, setQueryInput] = useState("");
+export default function Home(props) {
+  const query = props.params.q;
+  const [queryInput, setQueryInput] = useState(query);
   const [loading, setLoading] = useState(false);
   const [txs, setTxs] = useState(null);
   const [totalCount, setTotalCount] = useState(0);
@@ -23,14 +27,6 @@ export default function Home() {
       router.push(`/`);
     }
   }
-
-  useEffect(() => {
-    if (router.isReady) {
-      if (queryInput === "") {
-        setQueryInput(query);
-      }
-    }
-  }, [router.isReady, queryInput, query]);
 
   useEffect(() => {
     function load(query) {
@@ -73,8 +69,8 @@ export default function Home() {
         title="Celsius Transactions - Easily look up coin transactions from Celsius
           bankruptcy proceedings"
         canonical="https://celsiustransactions.com"
-        og="https://celsiustransactions.com/og.png"
-        cardTitle="Celsius Transactions"
+        og={`/api/ogSearch/${query}`}
+        cardTitle={`Search '${query}' in Celsius Transactions`}
       />
       <main className={styles.main}>
         <Link href="/">
