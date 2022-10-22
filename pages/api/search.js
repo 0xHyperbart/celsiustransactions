@@ -62,6 +62,6 @@ async function search(req) {
   };
 }
 
-export default async function handler(req, res) {
+export default function handler(req, res) {
   return handle(req, res, search);
 }
