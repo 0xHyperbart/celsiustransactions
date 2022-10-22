@@ -45,7 +45,7 @@ export default function NetWorth() {
 
       <main className={nwStyles.nwMain}>
         <h1 className={[homeStyles.title, personStyles.title].join(" ")}>
-          {username} lost{" "}
+          {assets ? username : ""} lost{" "}
           <span className={personStyles.lost}>{formatter.format(total)}</span>{" "}
           in Celsius
         </h1>
