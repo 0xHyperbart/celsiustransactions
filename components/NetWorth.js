@@ -22,13 +22,10 @@ export default function NetWorth({ type }) {
   useEffect(() => {
     const peopleArray = people ?? [];
     async function loadMore() {
-      console.log("loadMore");
       const request = await fetch(
         `/api/networth/${type}?skip=${peopleArray.length}`
       );
       const data = await request.json();
-
-      console.log("data", data);
       const newPeople = unionBy(peopleArray, data.people, "schedule").sort(
         (a, b) => b.networth - a.networth
       );
