@@ -44,39 +44,47 @@ export default function NetWorth() {
       />
 
       <main className={nwStyles.nwMain}>
-        <h1 className={[homeStyles.title, personStyles.title].join(" ")}>
-          {assets ? username : ""} lost{" "}
-          <span className={personStyles.lost}>{formatter.format(total)}</span>{" "}
-          in Celsius
-        </h1>
+        {assets ? (
+          <>
+            <h1 className={[homeStyles.title, personStyles.title].join(" ")}>
+              {username} lost{" "}
+              <span className={personStyles.lost}>
+                {formatter.format(total)}
+              </span>{" "}
+              in Celsius
+            </h1>
 
-        <div className={nwStyles.nwContainer}>
-          <table className={homeStyles.transactions}>
-            <thead>
-              <tr>
-                <th>TOKEN</th>
-                <th>CATEGORY</th>
-                <th>AMOUNT</th>
-                <th>VALUE</th>
-              </tr>
-            </thead>
-            <tbody>
-              {assets
-                ? assets.map((asset, i) => (
+            <div className={nwStyles.nwContainer}>
+              <table className={homeStyles.transactions}>
+                <thead>
+                  <tr>
+                    <th>TOKEN</th>
+                    <th>CATEGORY</th>
+                    <th>AMOUNT</th>
+                    <th>VALUE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {assets.map((asset, i) => (
                     <tr key={i}>
                       <td>{asset.token}</td>
                       <td>{asset.category}</td>
                       <td>{asset.quantity}</td>
                       <td>{formatter.format(asset.usd)}</td>
                     </tr>
-                  ))
-                : null}
-            </tbody>
-          </table>
-        </div>
-        <div className={personStyles.loadTransactions}>
-          <Link href={`/search/${username}`}>Load transactions →</Link>
-        </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className={personStyles.loadTransactions}>
+              <Link href={`/search/${username}`}>Load transactions →</Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={personStyles.loadTransactions}>Loading...</div>
+          </>
+        )}
       </main>
 
       <Footer />
