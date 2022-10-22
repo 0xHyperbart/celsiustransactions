@@ -30,6 +30,10 @@ export default function MetaTags(props) {
           name="description"
           content="Easily look up coin transactions from Celsius bankruptcy proceedings"
         />
+        <meta
+          name="keywords"
+          content="Celsius transactions dataset, leaked Celsius transactions, Celsius coin transactions, SOFA Question 3: Certain payments or transfers to creditors within 90 days before filing this case, Celsius net worth"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
