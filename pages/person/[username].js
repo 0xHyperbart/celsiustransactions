@@ -43,7 +43,7 @@ export default function Person(props) {
       <MetaTags
         title="Celsius Net Worth Leaderboard - Easily look up coin transactions from Celsius
         bankruptcy proceedings"
-        canonical="https://celsiustransactions.com/networth"
+        canonical={`https://celsiustransactions.com/person/${username}`}
         og={`/api/og/${username}`}
         cardTitle="Celsius Net Worth Leaderboard"
       />
