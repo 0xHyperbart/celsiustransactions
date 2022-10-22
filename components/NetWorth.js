@@ -64,9 +64,9 @@ export default function NetWorth({ type }) {
           <table className={homeStyles.transactions}>
             <thead>
               <tr>
-                <th>#</th>
-                <th>NAME</th>
-                <th>LOST</th>
+                <th className={nwStyles.columnNumber}>#</th>
+                <th className={nwStyles.columnName}>NAME</th>
+                <th className={nwStyles.columnLost}>LOST</th>
               </tr>
             </thead>
             <tbody>

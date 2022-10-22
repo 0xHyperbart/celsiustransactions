@@ -13,7 +13,17 @@
   justify-content: center;
 }
 .networth table {
-  max-width: 600px;
+  width: 600px;
+}
+
+.columnNumber {
+  width: 53px;
+}
+.columnName {
+  width: 398px;
+}
+.columnLost {
+  width: 148px;
 }
 
 .nwMain {
