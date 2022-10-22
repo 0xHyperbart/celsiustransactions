@@ -26,7 +26,7 @@ export default async function handler(req, res) {
           Search Celsius Transactions
         </div>
         <div style={{ display: "flex", fontSize: 32, marginTop: "30px" }}>
-          See '{username}' transactions
+          See {"'"}{username}{"'"} transactions
         </div>
         <div style={{ display: "flex", marginTop: "90px" }}>
           <div
