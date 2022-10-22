@@ -91,6 +91,9 @@ export default function NetWorth({ type }) {
         </div>
 
         <div className={nwStyles.nwContainer}>
+          <div className={homeStyles.small}>
+            <p>As of 11 October 2022</p>
+          </div>
           <table className={homeStyles.transactions}>
             <thead>
               <tr>
